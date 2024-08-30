@@ -2,7 +2,8 @@ import Link from "next/link";
 import React from "react";
 import Logo from "./Logo";
 import { useRouter } from "next/router";
-import TwitterIcon, { GithubIcon, LinkedInIcon } from "./Icons";
+import DiscordIcon, { GithubIcon, LinkedInIcon, TwitterIcon } from "./Icons";
+import { motion } from "framer-motion";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
@@ -32,22 +33,43 @@ const NavBar = () => {
         <CustomLink href="/articles" title="Articles" className="ml-4" />
       </nav>
 
-      <nav>
-        <Link href="/" target={"_blank"}>
+      <nav className="flex items-center justify-center flex-wrap">
+        <motion.a
+          href="https://github.com/ayuuuuu0-0"
+          target={"_blank"}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 mr-3"
+        >
           <GithubIcon />
-        </Link>
-        <Link href="/" target={"_blank"}>
+        </motion.a>
+        <motion.a
+          href="https://www.linkedin.com/in/ayush-ranjan019/"
+          target={"_blank"}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 mx-3"
+        >
           <LinkedInIcon />
-        </Link>
-        <Link href="/" target={"_blank"}>
+        </motion.a>
+        <motion.a
+          href="https://x.com/Ayuuuu_25"
+          target={"_blank"}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 mx-3"
+        >
           <TwitterIcon />
-        </Link>
-        <Link href="/" target={"_blank"}>
-          T
-        </Link>
-        <Link href="/" target={"_blank"}>
-          T
-        </Link>
+        </motion.a>
+        <motion.a
+          href="https://discord.com/users/753159553649999914"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 ml-3"
+          target={"_blank"}
+        >
+          <DiscordIcon />
+        </motion.a>
       </nav>
       <div className="absolute left-[50%] top-2 transalate-x-[50%]">
         <Logo />
