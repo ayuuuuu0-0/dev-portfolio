@@ -6,12 +6,12 @@ const Footer = () => {
   return (
     <footer
       className="w-11/12 border-t-2 border-solid border-gray-400
-    font-medium text-lg mx-auto
+    font-medium text-lg mx-auto dark:text-light dark:border-light
     "
     >
-      <Layout className="py-8 flex items-center justify-between">
-        <span>{new Date().getFullYear()} &copy; All Rights Reserved.</span>
-        <div className="flex items-center">
+      <Layout className="py-8 flex items-center justify-center">
+        {/* <span>{new Date().getFullYear()} &copy; All Rights Reserved.</span> */}
+        <div className="flex items-center font-mont">
           Lets build something great together{" "}
           <span className="text-2xl px-1" style={{ color: "#C3A5F5" }}>
             &#9829;

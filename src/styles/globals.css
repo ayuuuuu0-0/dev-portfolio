@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --top-layer-color: #2c2c2c; /* Default top layer color for light mode */
+  --bottom-layer-color: #8a59ec; /* Bottom layer color */
+}
+
+.dark {
+  --top-layer-color: #ffffff; /* Top layer color for dark mode */
+}
+
+.three-d-text {
+  position: relative;
+  color: var(--top-layer-color);
+  text-shadow: 5px 5px 0 var(--bottom-layer-color);
+  transition: color 0.3s ease;
+}
