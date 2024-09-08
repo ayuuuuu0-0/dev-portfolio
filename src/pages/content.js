@@ -4,13 +4,15 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
-import article1 from "../../public/images/articles/pagination component in reactjs.jpg";
-import article2 from "../../public/images/articles/create loading screen in react js.jpg";
-import artciles3 from "../../public/images/articles/create modal component in react using react portals.png";
-import artciles4 from "../../public/images/articles/smooth scrolling in reactjs.png";
-import artciles5 from "../../public/images/articles/What is Redux with easy explanation.png";
+import article1 from "../../public/images/articles/1.png";
+import firstarticle from "../../public/images/articles/article1.png";
+import secondarticle from "../../public/images/articles/article2.jpg";
+import article2 from "../../public/images/articles/2.png";
+import artciles3 from "../../public/images/articles/3.png";
+import artciles4 from "../../public/images/articles/4.png";
 
 import { motion, useMotionValue } from "framer-motion";
+import TransitionEffect from "@/components/transitionEffect";
 
 const FramerImage = motion(Image);
 
@@ -48,22 +50,22 @@ const MovingImg = ({ title, link, img }) => {
         ref={imgRef}
         src={img}
         alt={title}
-        className="z-10 w-96 h-auto hidden absolute rounded-lg"
+        className="z-10 w-96 h-auto hidden absolute rounded-lg md:!hidden"
       />
     </Link>
   );
 };
 
-const Article = ({ title, img, date, link }) => {
+const Content = ({ title, img, date, link }) => {
   return (
     <motion.li
       initial={{ y: 200, transition: { duration: 0.5, ease: "easeInOut" } }}
       viewport={{ once: true }}
       whileInView={{ y: 0 }}
-      className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:bg-dark dark:border-light dark:text-light"
+      className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:bg-dark dark:border-light dark:text-light sm:flex-col"
     >
       <MovingImg title={title} img={img} link={link} />
-      <span className="text-primary font-semibold pl-4 dark:text-primaryDark">
+      <span className="text-primary font-semibold pl-4 dark:text-primaryDark sm:self-start sm:pl-0 xs:text-sm">
         {date}
       </span>
     </motion.li>
@@ -77,7 +79,7 @@ const FeaturedArticles = ({ title, summary, img, link, time }) => {
       <Link
         href={link}
         target="_blank"
-        className="w-full inline-block cursor-pointer overflow-hidden rounded-lg"
+        className="w-full inline-block cursor-pointer overflow-hidden rounded-lg "
       >
         <FramerImage
           src={img}
@@ -90,7 +92,7 @@ const FeaturedArticles = ({ title, summary, img, link, time }) => {
         />
       </Link>
       <Link href={link} target="_blank">
-        <h2 className="capitalize text-2xl font-bold my-2 mt-4 hover:underline">
+        <h2 className="capitalize text-2xl font-bold my-2 mt-4 hover:underline xs:text-lg ">
           {title}
         </h2>
       </Link>
@@ -102,64 +104,63 @@ const FeaturedArticles = ({ title, summary, img, link, time }) => {
   );
 };
 
-const articles = () => {
+const content = () => {
   return (
     <>
       <Head>
-        <title>Ayush | Articles Page</title>
+        <title>Ayush | Content Page</title>
         <meta name="description" content="Ayuuu's portfolio website" />
       </Head>
+      <TransitionEffect />
       <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light">
         <Layout className="pt-16">
           <AnimatedText
             text="Uncover a mosaic of serendipities."
             className="mb-16"
           />
-          <ul className="grid grid-cols-2 gap-16">
+          <ul className="grid grid-cols-2 gap-16 md:grid-cols-1 lg:gap-8 md:gap-y-16">
             <FeaturedArticles
-              title="Article-1"
-              summary="Learn how to build a custom pagination component in ReactJS from scratch. 
-Follow this step-by-step guide to integrate Pagination component in your ReactJS project."
-              time="5 min read"
-              link="/"
-              img={article1}
+              title="Video"
+              summary="Check out my fun youtube video for superhero related content and reviews."
+              time="5 min watch"
+              link="https://youtu.be/3rQkVdZaPlE?si=jkrOjoPsJs-OhG9e"
+              img={firstarticle}
             />
             <FeaturedArticles
-              title="Article-1"
-              summary="Learn how to build a custom pagination component in ReactJS from scratch. 
-Follow this step-by-step guide to integrate Pagination component in your ReactJS project."
-              time="5 min read"
-              link="/"
-              img={article2}
+              title="Video"
+              summary="Check out my fun youtube video for superhero related content and reviews."
+              time="5 min watch"
+              link="https://youtu.be/ok6CgW8POJ8?si=VzrbMW8yQA4udzCa"
+              img={secondarticle}
             />
           </ul>
           <h2 className="font-bold text-4xl w-full text-center my-16 font-mont">
-            All Articles
+            All Profiles
           </h2>
           <ul>
-            <Article
-              title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-              date="5 min read"
+            <Content
+              title="Check Out my letterboxd profile for movie reviews and recommendations 🎬"
+              date="Movies"
+              link="https://boxd.it/b5U7H"
+              img={article1}
+            />
+            <Content
+              title="Check out my youtube channel TheComiConnection for superhero and comic book related content 🦸‍♂️"
+              date="Youtube"
+              link="https://www.youtube.com/@TheComicConnection"
+              img={article2}
+            />
+            <Content
+              title="Checkout my youtube channel TheAnimeConnects for anime related cool stuff 🎌"
+              date="Youtube"
               link="/"
               img={artciles3}
             />
-            <Article
-              title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-              date="5 min read"
-              link="/"
+            <Content
+              title="Check out my twitter profile for daily updates and posts!"
+              date="Twitter"
+              link="https://x.com/Ayuuuu_25"
               img={artciles4}
-            />
-            <Article
-              title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-              date="5 min read"
-              link="/"
-              img={artciles5}
-            />
-            <Article
-              title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-              date="5 min read"
-              link="/"
-              img={artciles3}
             />
           </ul>
         </Layout>
@@ -168,4 +169,4 @@ Follow this step-by-step guide to integrate Pagination component in your ReactJS
   );
 };
 
-export default articles;
+export default content;

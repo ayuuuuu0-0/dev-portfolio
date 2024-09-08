@@ -68,7 +68,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="w-full px-32 py-8 font-medium flex items-center justify-between font-mont dark:text-light relative">
+    <header className="w-full px-32 py-8 font-medium flex items-center justify-between font-mont dark:text-light relative z-10 lg:px-16 md:px-12 sm:px-8">
       <button
         className="flex flex-col justify-center items-center hidden lg:flex"
         onClick={handleClick}
@@ -95,7 +95,7 @@ const NavBar = () => {
           <CustomLink href="/" title="Home" className="mr-4" />
           <CustomLink href="/about" title="About" className="mx-4" />
           <CustomLink href="/project" title="Projects" className="mx-4" />
-          <CustomLink href="/articles" title="Articles" className="ml-4" />
+          <CustomLink href="/content" title="Content" className="ml-4" />
         </nav>
 
         <nav className="flex items-center justify-center flex-wrap">
@@ -177,8 +177,8 @@ const NavBar = () => {
               toggle={handleClick}
             />
             <CustomMobileLink
-              href="/articles"
-              title="Articles"
+              href="/content"
+              title="Content"
               className=""
               toggle={handleClick}
             />
@@ -238,7 +238,7 @@ const NavBar = () => {
         </motion.div>
       ) : null}
 
-      <div className="absolute left-[50%] top-2 transalate-x-[50%]">
+      <div className="absolute left-[50%] top-2 translate-x-[-50%]">
         <Logo />
       </div>
     </header>

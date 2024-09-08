@@ -34,6 +34,8 @@ import "@/styles/globals.css";
 import { Montserrat } from "next/font/google";
 import Head from "next/head";
 import useThemeSwitcher from "@/hooks/useThemeSwitcher"; // Make sure this path is correct
+import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -42,6 +44,7 @@ const montserrat = Montserrat({
 
 export default function App({ Component, pageProps }) {
   const [mode] = useThemeSwitcher();
+  const router = useRouter();
 
   useEffect(() => {
     if (mode === "dark") {
@@ -61,7 +64,9 @@ export default function App({ Component, pageProps }) {
         className={`${montserrat.variable} font-mont bg-light dark:bg-dark w-full min-h-screen`}
       >
         <NavBar />
-        <Component {...pageProps} />
+        <AnimatePresence mode="exit">
+          <Component key={router.aspath} {...pageProps} />
+        </AnimatePresence>
         <Footer />
       </main>
     </>
