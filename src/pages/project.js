@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import AnimatedText from "@/components/AnimatedText";
 import { GithubIcon } from "@/components/Icons";
 import Layout from "@/components/Layout";
@@ -14,7 +16,7 @@ import projectfifth from "../../public/images/projects/5.png";
 import projectsixth from "../../public/images/projects/project6.png";
 
 import { motion } from "framer-motion";
-import TransitionEffect from "@/components/transitionEffect";
+import TransitionEffect from "@/components/TransitionEffect";
 
 const FramerImage = motion(Image);
 

@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Image from "next/image";
@@ -8,7 +10,7 @@ import { LinkArrow } from "@/components/Icons";
 import HireMe from "@/components/HireMe";
 import spidey from "../../public/images/profile/spidey_sec.png";
 import spidey2 from "../../public/images/profile/spidey_sec2.png";
-import TransitionEffect from "@/components/transitionEffect";
+import TransitionEffect from "@/components/TransitionEffect";
 
 export default function Home() {
   return (

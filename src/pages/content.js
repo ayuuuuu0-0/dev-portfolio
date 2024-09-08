@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import Head from "next/head";
@@ -12,7 +14,7 @@ import artciles3 from "../../public/images/articles/3.png";
 import artciles4 from "../../public/images/articles/4.png";
 
 import { motion, useMotionValue } from "framer-motion";
-import TransitionEffect from "@/components/transitionEffect";
+import TransitionEffect from "@/components/TransitionEffect";
 
 const FramerImage = motion(Image);
 
