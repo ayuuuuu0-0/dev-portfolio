@@ -176,7 +176,7 @@ local currency."
               <FeaturedProject
                 title="College Cart"
                 summary="A Flutter based application for college students to sell and buy all products for college necessities with user authentication, profiles, multimedia post creation."
-                link="https://github.com/ayuuuuu0-0/Uniconnect"
+                link="https://college-cart.vercel.app/"
                 type="Featured Project"
                 github="https://github.com/ayuuuuu0-0/Uniconnect"
                 img={projectthird}
